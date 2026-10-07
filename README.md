@@ -1,7 +1,9 @@
 ﻿# SimplePad 2.0
 <p>This is mine text editor project. I developed first version of it in my third semester at the university</p>
-<p>I use it instead of windows notepad and it was very helpful for my Factorio modpack development that I've been playing for 200+ hours with my friend</p>
-<p>But code of the first version is complete crap cuz I wasn't experienced enough, so here we are - the second version which is port of it to Avalonia MVVM</p>
+<p>I've used it instead of windows notepad and it was very helpful for my Factorio modpack development that I've been playing for 200+ hours with my friend</p>
+<p>But code of the first version is complete crap cuz I wasn't experienced enough, so here we are - the second version which is port of it to Avalonia MVVM.</p>
+<p></p>
+<p>And the most useful feature - it can search string in thousands of files very very fast.</p>
 
 <img width="1263" height="849" alt="image" src="https://github.com/user-attachments/assets/66d95249-88d3-4aa9-b574-fd3b3529793c" />
 
