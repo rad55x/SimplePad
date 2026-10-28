@@ -42,13 +42,14 @@
 		<!--| TextEditor style -->
 		<Style Selector="AvaloniaEdit|TextEditor">
 			<Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="Background" Value="{DynamicResource DarkTextEditorColor}"/>
 		</Style>
 		<!--|-->
         <!--| Button style -->
         <Style Selector="Button">
             <Setter Property="FontSize" Value="13"/>
-			<Setter Property="Foreground" Value="White"/>
-            <Setter Property="Background" Value="{DynamicResource DefaultButtonColor}"/>
+			<Setter Property="Foreground" Value="{DynamicResource DefaultButtonForeground}"/>
+            <Setter Property="Background" Value="{DynamicResource DefaultButtonBackground}"/>
         </Style>
         <!--|-->
         <!--| RadioButton style -->
@@ -83,17 +84,17 @@
         <!--|-->
         <!--| Context menu style -->
         <Style Selector="ContextMenu">
-			<Setter Property="Background" Value="{DynamicResource DefaultButtonColor}"/>
+			<Setter Property="Background" Value="{DynamicResource DefaultButtonBackground}"/>
         </Style>
         <!--|-->
         <!--| Flyout menu style -->
         <Style Selector="MenuFlyoutPresenter">
-			<Setter Property="Background" Value="{DynamicResource DefaultButtonColor}"/>
+			<Setter Property="Background" Value="{DynamicResource DefaultButtonBackground}"/>
         </Style>
         <!--|-->
         <!--| Menu item style -->
         <Style Selector="MenuItem">
-			<Setter Property="Background" Value="{DynamicResource DefaultButtonColor}"/>
+			<Setter Property="Background" Value="{DynamicResource DefaultButtonBackground}"/>
             <Setter Property="FontSize" Value="13"/>
         </Style>
         <!--|-->
@@ -151,27 +152,49 @@
         </Style>
         <!--|-->
         <!---->
+        <Style Selector="Svg">
+            <Setter Property="Css" Value="{DynamicResource DefaultSvgColor}"/>
+        </Style>
     </Application.Styles>
     <Application.Resources>
-        <!-- Colors -->
-        <SolidColorBrush x:Key="DefaultBorderColor">#FF383838</SolidColorBrush>
-        <SolidColorBrush x:Key="DefaultBackgroundColor">#FF202020</SolidColorBrush>
-        <SolidColorBrush x:Key="DefaultButtonColor">#FF2F2F2F</SolidColorBrush>
-		<SolidColorBrush x:Key="TextEditorColor">#FF151515</SolidColorBrush>
-		<SolidColorBrush x:Key="DarkTextEditorColor">#FF101010</SolidColorBrush>
-        <!---->
-        <!-- Menus -->
-        <MenuFlyout x:Key="TextEditorMenu" Placement="BottomEdgeAlignedLeft" PlacementGravity="BottomLeft" OverlayDismissEventPassThrough="True" Opened="OnTextEditorMenuOpened">
-            <MenuItem Header="Undo" InputGesture="Ctrl+Z" Click="OnTextEditorUndo"/>
-			<MenuItem Header="Redo" InputGesture="Ctrl+Y" Click="OnTextEditorRedo"/>
-            <Separator/>
-			<MenuItem Header="Cut" InputGesture="Ctrl+X" Click="OnTextEditorCut"/>
-			<MenuItem Header="Copy" InputGesture="Ctrl+C" Click="OnTextEditorCopy"/>
-			<MenuItem Header="Paste" InputGesture="Ctrl+V" Click="OnTextEditorPaste"/>
-			<MenuItem Header="Delete" InputGesture="Delete" Click="OnTextEditorDelete"/>
-            <Separator/>
-			<MenuItem Header="Select all" InputGesture="Ctrl+A" Click="OnTextEditorSelectAll"/>
-        </MenuFlyout>
-        <!---->
+        <ResourceDictionary>
+            <!-- Menus -->
+            <MenuFlyout x:Key="TextEditorMenu" Placement="BottomEdgeAlignedLeft" PlacementGravity="BottomLeft" OverlayDismissEventPassThrough="True" Opened="OnTextEditorMenuOpened">
+                <MenuItem Header="Undo" InputGesture="Ctrl+Z" Click="OnTextEditorUndo"/>
+			    <MenuItem Header="Redo" InputGesture="Ctrl+Y" Click="OnTextEditorRedo"/>
+                <Separator/>
+			    <MenuItem Header="Cut" InputGesture="Ctrl+X" Click="OnTextEditorCut"/>
+			    <MenuItem Header="Copy" InputGesture="Ctrl+C" Click="OnTextEditorCopy"/>
+			    <MenuItem Header="Paste" InputGesture="Ctrl+V" Click="OnTextEditorPaste"/>
+			    <MenuItem Header="Delete" InputGesture="Delete" Click="OnTextEditorDelete"/>
+                <Separator/>
+			    <MenuItem Header="Select all" InputGesture="Ctrl+A" Click="OnTextEditorSelectAll"/>
+            </MenuFlyout>
+            <!---->
+            <!-- Colors -->
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="DefaultBorderColor">#FFBABABA</SolidColorBrush>
+                    <SolidColorBrush x:Key="DefaultForegroundColor">Black</SolidColorBrush>
+                    <SolidColorBrush x:Key="DefaultBackgroundColor">#FFE7E7E7</SolidColorBrush>
+                    <SolidColorBrush x:Key="DefaultButtonForeground">Black</SolidColorBrush>
+                    <SolidColorBrush x:Key="DefaultButtonBackground">#FFDFDFDF</SolidColorBrush>
+		            <SolidColorBrush x:Key="TextEditorColor">#FFE7E7E7</SolidColorBrush>
+		            <SolidColorBrush x:Key="DarkTextEditorColor">White</SolidColorBrush>
+                    <x:String x:Key="DefaultSvgColor">.cls-1 { fill: #000000; }</x:String>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="DefaultBorderColor">#FF55BBFF</SolidColorBrush>
+                    <SolidColorBrush x:Key="DefaultForegroundColor">White</SolidColorBrush>
+                    <SolidColorBrush x:Key="DefaultBackgroundColor">#FF202020</SolidColorBrush>
+                    <SolidColorBrush x:Key="DefaultButtonForeground">White</SolidColorBrush>
+                    <SolidColorBrush x:Key="DefaultButtonBackground">#FF2F2F2F</SolidColorBrush>
+		            <SolidColorBrush x:Key="TextEditorColor">#FF151515</SolidColorBrush>
+		            <SolidColorBrush x:Key="DarkTextEditorColor">#FF101010</SolidColorBrush>
+                    <x:String x:Key="DefaultSvgColor">.cls-1 { fill: #ffffff; }</x:String>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+            <!---->
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

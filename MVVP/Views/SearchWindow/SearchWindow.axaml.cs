@@ -80,6 +80,8 @@ namespace SimplePad.Views
         /// <c>Ctrl+H</c> - Replace - Switches to the replace tab in the <see cref="SearchTabControl"/>.
         /// <br/>
         /// <c>Ctrl+G</c> - Goto - Switches to the goto tab in the <see cref="SearchTabControl"/>.
+        /// <br/>
+        /// <c>Escape</c> - Hide - Hides the window.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

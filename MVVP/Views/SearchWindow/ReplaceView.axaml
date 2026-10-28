@@ -25,7 +25,7 @@
         </Grid.RowDefinitions>
         <TextBox x:Name="FindTextBox"
                  Text="{CompiledBinding SearchText}" Watermark="Find..."
-                 Foreground="White" Background="{StaticResource TextEditorColor}"
+                 Foreground="{StaticResource DefaultForegroundColor}" Background="{StaticResource TextEditorColor}"
                  Margin="6" Padding="5"
                  TextWrapping="NoWrap"
                  AcceptsReturn="{CompiledBinding IsMultipleLineInput}"
@@ -37,7 +37,7 @@
         </TextBox>
         <TextBox x:Name="ReplaceTextBox"
                  Text="{CompiledBinding ReplaceText}" Watermark="Replace..."
-                 Foreground="White" Background="{StaticResource TextEditorColor}"
+                 Foreground="{StaticResource DefaultForegroundColor}" Background="{StaticResource TextEditorColor}"
                  Margin="6" Padding="5"
                  TextWrapping="NoWrap"
                  AcceptsReturn="{CompiledBinding IsMultipleLineInput}"

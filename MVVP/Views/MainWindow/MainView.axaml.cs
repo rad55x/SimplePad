@@ -587,14 +587,14 @@ namespace SimplePad.Views
         {
             if (_areSearchResultsVisible)
             {
-                ShowHideSearchResultsIcon.Source = GetSvgFromUriString("avares://SimplePad/Assets/UpDirectionIcon.svg");
+                ShowHideSearchResultsIcon.Path = "avares://SimplePad/Assets/UpDirectionIcon.svg";
                 TextGrid.RowDefinitions[2].Height = new GridLength(25);
             }
             else
             {
                 Window? mainWindow = GetParentWindow();
 
-                ShowHideSearchResultsIcon.Source = GetSvgFromUriString("avares://SimplePad/Assets/DownDirectionIcon.svg");
+                ShowHideSearchResultsIcon.Path = "avares://SimplePad/Assets/DownDirectionIcon.svg";
 
                 if (mainWindow != null)
                 {
@@ -624,7 +624,7 @@ namespace SimplePad.Views
             {
                 if (!_areSearchResultsVisible)
                 {
-                    ShowHideSearchResultsIcon.Source = GetSvgFromUriString("avares://SimplePad/Assets/DownDirectionIcon.svg");
+                    ShowHideSearchResultsIcon.Path = "avares://SimplePad/Assets/DownDirectionIcon.svg";
 
                     _areSearchResultsVisible = true;
                 }
@@ -633,7 +633,7 @@ namespace SimplePad.Views
             {
                 if (_areSearchResultsVisible)
                 {
-                    ShowHideSearchResultsIcon.Source = GetSvgFromUriString("avares://SimplePad/Assets/UpDirectionIcon.svg");
+                    ShowHideSearchResultsIcon.Path = "avares://SimplePad/Assets/UpDirectionIcon.svg";
 
                     _areSearchResultsVisible = false;
                 }

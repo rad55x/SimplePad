@@ -112,6 +112,9 @@
             </Button>
             <!---->
         </StackPanel>
+            <!-- Theme button -->
+            <Button Content="Theme" Command="{CompiledBinding SwitchThemeCommand}" Width="67" Padding="0,4" CornerRadius="0" HorizontalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Stretch"/>
+            <!---->
         <!---->
         <Grid x:Name="TextGrid"  Grid.Row="1">
             <Grid.RowDefinitions>
@@ -122,12 +125,13 @@
             <!-- Main text editor -->
             <AvaloniaEdit:TextEditor x:Name="MainTextEditor"
                                      Document="{CompiledBinding MainTextDocument}"
-                                     Foreground="White"
+                                     Foreground="{StaticResource DefaultForegroundColor}"
                                      Background="{StaticResource TextEditorColor}"
-                                     Padding="5"
+                                     Padding="5,5,20,20"
                                      WordWrap="{CompiledBinding IsWordWrapEnabled}"
                                      ContextFlyout="{DynamicResource TextEditorMenu}">
 			    <Interaction.Behaviors>
+                    <Behaviors:TextEditorScrollPaddingBehavior/>
                     <Behaviors:TextEditorZoomBehavior/>
 			    </Interaction.Behaviors>
             </AvaloniaEdit:TextEditor>
@@ -148,16 +152,15 @@
                             Width="30"
                             Margin="0,0,0,0"
                             HorizontalAlignment="Right" VerticalAlignment="Stretch">
-                        <Image x:Name="ShowHideSearchResultsIcon"
-                               Source="{SvgImage /Assets/UpDirectionIcon.svg}"
-                               Width="8"/>
+                        <Svg x:Name="ShowHideSearchResultsIcon"
+Path="avares://SimplePad/Assets/UpDirectionIcon.svg"
+Width="8"/>
                     </Button>
                 </Grid>
                 <AvaloniaEdit:TextEditor x:Name="SearchResultsViewer"
                                          Document="{CompiledBinding SearchResultsDocument}"
-                                         Foreground="White"
-                                         Background="{StaticResource DarkTextEditorColor}"
-                                         Padding="5"
+                                         Foreground="{StaticResource DefaultForegroundColor}"
+                                         Padding="5,5,20,20"
                                          IsReadOnly="True"
                                          Focusable="False"
                                          SyntaxHighlighting="False"
@@ -165,6 +168,7 @@
                                          ScrollViewer.VerticalScrollBarVisibility="Auto"
                                          Grid.Row="1">
 			        <Interaction.Behaviors>
+                        <Behaviors:TextEditorScrollPaddingBehavior/>
                         <Behaviors:TextEditorZoomBehavior/>
 			        </Interaction.Behaviors>
                 </AvaloniaEdit:TextEditor>

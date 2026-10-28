@@ -9,7 +9,7 @@
         x:Class="SimplePad.Views.MainWindow"
         x:DataType="ViewModels:MainViewModel"
         Title="{Binding ShortTitle}" Icon="\Icon.ico"
-        MinWidth="250" MinHeight="100" 
+        MinWidth="319" MinHeight="100" 
         ExtendClientAreaToDecorationsHint="True"
         Resized="OnResized"
         Closing="OnClosing">

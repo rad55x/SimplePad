@@ -25,7 +25,7 @@
         </Grid.RowDefinitions>
         <TextBox x:Name="GotoTextBox"
                  Text="{CompiledBinding GotoText}" Watermark="Go to..."
-                 Foreground="White" Background="{StaticResource TextEditorColor}"
+                 Foreground="{StaticResource DefaultForegroundColor}" Background="{StaticResource TextEditorColor}"
                  Margin="6" Padding="5"
                  TextWrapping="NoWrap"
                  ContextFlyout="{DynamicResource TextEditorControlMenu}"

@@ -1,4 +1,6 @@
-﻿using AvaloniaEdit;
+﻿using Avalonia;
+using Avalonia.Styling;
+using AvaloniaEdit;
 using AvaloniaEdit.Document;
 using AvaloniaEdit.Search;
 using CommunityToolkit.Mvvm.Input;
@@ -1004,6 +1006,20 @@ namespace SimplePad.ViewModels
                 {
                     extensionItem.IsChecked = false;
                 }
+            }
+        }
+        #endregion
+
+        #region Style Commands
+        /// <summary>
+        /// Command to switch the application's theme between light and dark modes.
+        /// </summary>
+        [RelayCommand]
+        public void SwitchThemeCommand()
+        {
+            if (Application.Current is { } app)
+            {
+                app.RequestedThemeVariant = app.ActualThemeVariant == ThemeVariant.Dark ? ThemeVariant.Light : ThemeVariant.Dark;
             }
         }
         #endregion

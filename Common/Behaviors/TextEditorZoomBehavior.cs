@@ -1,9 +1,7 @@
-﻿using Avalonia.Controls;
-using Avalonia.Input;
+﻿using Avalonia.Input;
 using Avalonia.Xaml.Interactivity;
 using AvaloniaEdit;
 using System;
-using System.Linq;
 
 namespace SimplePad.Behaviors
 {

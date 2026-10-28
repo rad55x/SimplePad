@@ -24,7 +24,7 @@
         </Grid.RowDefinitions>
         <TextBox x:Name="FindTextBox"
                  Text="{CompiledBinding SearchText}" Watermark="Find..."
-                 Foreground="White" Background="{StaticResource TextEditorColor}"
+                 Foreground="{StaticResource DefaultForegroundColor}" Background="{StaticResource TextEditorColor}"
                  Margin="6" Padding="5"
                  TextWrapping="NoWrap"
                  AcceptsReturn="{CompiledBinding IsMultipleLineInput}"
