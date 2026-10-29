@@ -10,6 +10,13 @@
         /// <br/><br/>
         /// A value of -1 indicates that the position is not set and the window will be centered on the screen.
         /// </summary>
+        public bool IsLightTheme { get; set; } = false;
+
+        /// <summary>
+        /// Gets or sets the X coordinate of the main window's position on the screen.
+        /// <br/><br/>
+        /// A value of -1 indicates that the position is not set and the window will be centered on the screen.
+        /// </summary>
         public int MainWindowX { get; set; } = -1;
 
         /// <summary>

@@ -1019,7 +1019,8 @@ namespace SimplePad.ViewModels
         {
             if (Application.Current is { } app)
             {
-                app.RequestedThemeVariant = app.ActualThemeVariant == ThemeVariant.Dark ? ThemeVariant.Light : ThemeVariant.Dark;
+                SettingsService.UserSettings.UISettings.IsLightTheme = app.ActualThemeVariant == ThemeVariant.Light ? false : true;
+                app.RequestedThemeVariant = SettingsService.UserSettings.UISettings.IsLightTheme ? ThemeVariant.Light : ThemeVariant.Dark;
             }
         }
         #endregion
@@ -1030,6 +1031,7 @@ namespace SimplePad.ViewModels
         /// </summary>
         public void LoadSettings()
         {
+            // Functional settings
             IsInAllSubfolders = SettingsService.UserSettings.FunctionalSettings.IsInAllSubfolders;
 
             IsMatchCase = SettingsService.UserSettings.FunctionalSettings.IsMatchCase;
@@ -1045,6 +1047,7 @@ namespace SimplePad.ViewModels
 
             FileProcessingDirectory = SettingsService.UserSettings.FunctionalSettings.FileProcessingDirectory;
 
+            /// Load selected extensions
             foreach (string extension in SettingsService.UserSettings.FunctionalSettings.SelectedExtensions)
             {
                 foreach (var item in FileExtensionItems.Where(item => item.Extension == extension))
@@ -1052,6 +1055,16 @@ namespace SimplePad.ViewModels
                     item.IsChecked = true;
                 }
             }
+            ///
+            //
+            // UI settings
+            /// Load theme
+            if (Application.Current is { } app)
+            {
+                app.RequestedThemeVariant = SettingsService.UserSettings.UISettings.IsLightTheme ? ThemeVariant.Light : ThemeVariant.Dark;
+            }
+            ///
+            //
         }
 
         /// <summary>
